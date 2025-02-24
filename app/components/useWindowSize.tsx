@@ -5,11 +5,13 @@ export const useWindowSize = () => {
     width: number;
     height: number;
   }>({
-    width: window.innerWidth, // Initialize with actual values
-    height: window.innerHeight,
+    width: typeof window !== "undefined" ? window.innerWidth : 0, // Ensure SSR safety
+    height: typeof window !== "undefined" ? window.innerHeight : 0,
   });
 
   useEffect(() => {
+    if (typeof window === "undefined") return; // Prevent errors during SSR
+
     function handleResize() {
       setWindowSize({
         width: window.innerWidth,
@@ -18,6 +20,8 @@ export const useWindowSize = () => {
     }
 
     window.addEventListener("resize", handleResize);
+    handleResize(); // Initialize with correct values after mounting
+
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
