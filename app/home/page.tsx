@@ -3,10 +3,13 @@
 import { useEffect, useRef } from "react";
 import HeroSection from "../components/herosection";
 import Services from "../components/services"
-import Experience from "../components/experience";
-import Contact from "../components/contactus";
-import HorizontalServices from "../components/horizontalservices";
+// import Experience from "../components/experience";
+import { TextParallaxContentExample } from "../components/parallaxContent";
+// import HorizontalServices from "../components/horizontalservices";
 import Offerings from "../components/offerings";
+// import Newteam from "../components/newteam";
+// import Scroll from "../components/horizontalscroll";
+import ScrollingLogos from "../components/scrollinglogos";
 export default function Home() {
   const contactRef = useRef<HTMLDivElement>(null);
 
@@ -21,15 +24,19 @@ export default function Home() {
       <HeroSection />
       <Services />
       <Offerings />
-      <HorizontalServices />
-      <Experience />
+      {/* <HorizontalServices /> */}
+      {/* <Experience /> */}
+      {/* <Newteam /> */}
+      <TextParallaxContentExample />
+      {/* <Scroll /> */}
+      <div className="md:my-10">
+        <ScrollingLogos />
+      </div>
+
       {/* <History />
       <Justification />
       <PracticeAreas />
       <Team /> */}
-      <div ref={contactRef} id="contact">
-        <Contact />
-      </div>
       {/* <Logos /> */}
     </div>
   );

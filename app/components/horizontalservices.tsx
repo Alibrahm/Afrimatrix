@@ -5,6 +5,7 @@ import { useWindowSize } from "./useWindowSize";
 import { useState } from "react";
 import { Dispatch, SetStateAction } from "react";
 import { IconType } from "react-icons";
+import Card from "../components/card";
 interface PanelProps {
   open: string | number; // Now 'open' represents the active panel ID
   setOpen: Dispatch<SetStateAction<string | number>>; // Updates the active panel ID
@@ -59,24 +60,26 @@ const [open, setOpen] = useState<string | number>(items[0].id);
           with our Advanced Survey Analytics
         </motion.h2>
       </div>
-      {/* <div className="grid grid-cols-3 gap-2"> */}
-      <div className="col-span-2 flex flex-col lg:flex-row h-fit lg:h-[450px] w-full max-w-6xl mx-auto shadow overflow-hidden">
-        {items.map((item) => {
-          return (
-            <Panel
-              key={item.id}
-              open={open}
-              setOpen={setOpen}
-              id={item.id}
-              Icon={item.Icon}
-              title={item.title}
-              imgSrc={item.imgSrc}
-              description={item.description}
-            />
-          );
-        })}
+      <div className="grid md:grid-cols-3 grid-cols-1 gap-2">
+        <div className="col-span-2 flex flex-col lg:flex-row h-fit lg:h-[450px] w-full max-w-6xl mx-auto shadow overflow-hidden">
+          {items.map((item) => {
+            return (
+              <Panel
+                key={item.id}
+                open={open}
+                setOpen={setOpen}
+                id={item.id}
+                Icon={item.Icon}
+                title={item.title}
+                imgSrc={item.imgSrc}
+                description={item.description}
+              />
+            );
+          })}
+        </div>
+
+        <Card />
       </div>
-      {/* </div> */}
     </section>
   );
 };
@@ -127,14 +130,14 @@ const Panel: React.FC<PanelProps> = ({
               backgroundPosition: "center",
               backgroundSize: "cover",
             }}
-            className="w-full h-full overflow-hidden relative bg-black flex items-end"
+            className="w-full h-full overflow-hidden relative bg-black rounded-xl flex items-end"
           >
             <motion.div
               variants={descriptionVariants}
               initial="closed"
               animate="open"
               exit="closed"
-              className="px-4 py-2 bg-black/40 backdrop-blur-sm text-white"
+              className="px-4 py-2 bg-black/40 backdrop-blur-sm text-white "
             >
               <p>{description}</p>
             </motion.div>

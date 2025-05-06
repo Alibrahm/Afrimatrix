@@ -8,7 +8,7 @@ const services = [
     icon: <GlobalEdit size="32" color="#FF8A65" />,
     title: "GLOBAL SAMPLE",
     description:
-      "iMAD Research operates carefully curated proprietary online panels. We specialize in delivering unsurpassed global respondents for B2B Decision Makers, Healthcare Professionals, and Consumers.",
+      "Afrimatrix operates carefully curated proprietary online panels. We specialize in delivering unsurpassed global respondents for B2B Decision Makers, Healthcare Professionals, and Consumers.",
   },
   {
     icon: <NotificationStatus size="32" color="#FF8A65" />,
@@ -60,18 +60,40 @@ const ServicesSection = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
-            className="bg-white rounded-xl shadow-lg p-6 py-12 max-w-sm text-center flex flex-col items-center hover:shadow-2xl transition-shadow duration-300"
+            className="relative bg-white rounded-xl p-6 py-12 max-w-sm text-center flex flex-col items-center hover:shadow-2xl transition-shadow duration-300"
+            style={{
+              backgroundImage: 'linear-gradient(to bottom, #fff calc(1.5em - 1px), #e5e7eb calc(1.5em - 1px), #e5e7eb 1.5em, #fff 1.5em)',
+              backgroundPosition: '0% 4.5em',
+              backgroundSize: '100% 1.5em',
+              backgroundRepeat: 'repeat-y',
+              boxShadow: '-0.5rem 0.5rem 1rem rgba(0,0,0,0.1)',
+            }}
           >
-            <div className="mb-4">{service.icon}</div>
-            <h3 className="text-lg font-semibold text-gray-900">
+            {/* Background layers for paper effect */}
+            <div 
+              className="absolute inset-0 bg-white rounded-xl"
+              style={{
+                transform: 'rotate(-1deg)',
+                zIndex: -1,
+                boxShadow: '-0.5rem 0.5rem 1rem rgba(0,0,0,0.05)',
+              }}
+            />
+            <div 
+              className="absolute inset-0 bg-white rounded-xl"
+              style={{
+                transform: 'rotate(1deg)',
+                zIndex: -2,
+                boxShadow: '-0.5rem 0.5rem 1rem rgba(0,0,0,0.05)',
+              }}
+            />
+            
+            <div className="mb-4 relative z-10">{service.icon}</div>
+            <h3 className="text-lg font-semibold text-gray-900 relative z-10">
               {service.title}
             </h3>
-            <p className="text-gray-600 md:text-md my-2 tracking-wide">
+            <p className="text-gray-600 md:text-md -mt-1 tracking-wide relative z-10">
               {service.description}
             </p>
-            <button className="mt-9 text-yellow-500 font-semibold hover:underline">
-              + LEARN MORE
-            </button>
           </motion.div>
         ))}
       </div>
