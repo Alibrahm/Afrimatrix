@@ -1,9 +1,42 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { FiTrendingUp, FiUsers, FiTarget, FiStar } from "react-icons/fi";
+import { FiTrendingUp, FiUsers, FiTarget, FiStar, FiCheckCircle } from "react-icons/fi";
 
 const ResearchPage = () => {
+  const steps = [
+    {
+      title: "Focus Groups",
+      description: "In-depth discussions with target consumers to gather qualitative insights and initial reactions.",
+      icon: <FiUsers className="w-6 h-6" />,
+    },
+    {
+      title: "Online Survey",
+      description: "Quantitative research to validate findings and gather broader market perspectives.",
+      icon: <FiTarget className="w-6 h-6" />,
+    },
+    {
+      title: "Advanced Analytics",
+      description: "Data analysis and pattern recognition to identify key trends and opportunities.",
+      icon: <FiTrendingUp className="w-6 h-6" />,
+    },
+    {
+      title: "Report & Personas",
+      description: "Detailed documentation and consumer persona development for strategic planning.",
+      icon: <FiStar className="w-6 h-6" />,
+    },
+    {
+      title: "Segment Simulator",
+      description: "Interactive modeling to test different market scenarios and segment responses.",
+      icon: <FiCheckCircle className="w-6 h-6" />,
+    },
+    {
+      title: "Implementation Workshop",
+      description: "Collaborative session to develop actionable strategies based on research findings.",
+      icon: <FiUsers className="w-6 h-6" />,
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-neutral-50">
       {/* Hero Section */}
@@ -114,24 +147,44 @@ const ResearchPage = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold text-neutral-900 mb-12 text-center">
-              Concept Testing
+              Concept Testing Process
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-neutral-50 p-6 rounded-lg shadow-lg">
-                <FiStar className="w-12 h-12 text-[#B79765] mb-4" />
-                <h3 className="text-xl font-semibold mb-4">Product Development</h3>
-                <p className="text-neutral-600">
-                  Rigorous testing of new product concepts through focus groups and
-                  quantitative surveys, ensuring market fit before launch.
-                </p>
-              </div>
-              <div className="bg-neutral-50 p-6 rounded-lg shadow-lg">
-                <FiTarget className="w-12 h-12 text-[#B79765] mb-4" />
-                <h3 className="text-xl font-semibold mb-4">Message Testing</h3>
-                <p className="text-neutral-600">
-                  Evaluation of marketing messages and creative concepts to optimize
-                  communication strategies for different market segments.
-                </p>
+            <div className="relative">
+              {/* Progress Bar */}
+              <div className="absolute left-0 top-0 h-full w-1 bg-neutral-200 ml-6 md:ml-8" />
+              
+              {/* Steps */}
+              <div className="space-y-12">
+                {steps.map((step, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="relative flex items-start"
+                  >
+                    {/* Step Number */}
+                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#B79765] text-white z-10">
+                      {index + 1}
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="ml-8 flex-1">
+                      <div className="flex items-center">
+                        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-neutral-100 text-[#B79765] mr-4">
+                          {step.icon}
+                        </div>
+                        <h3 className="text-xl font-semibold text-neutral-900">
+                          {step.title}
+                        </h3>
+                      </div>
+                      <p className="mt-2 text-neutral-600 ml-14">
+                        {step.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </motion.div>
