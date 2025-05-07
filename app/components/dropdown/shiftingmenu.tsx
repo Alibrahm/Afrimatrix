@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import {
   FiArrowRight,
-  FiBarChart2,
+  // FiBarChart2,
   FiChevronDown,
   FiHome,
-  FiPieChart,
+  // FiPieChart,
   FiUsers,
   FiGlobe,
   FiTrendingUp,
