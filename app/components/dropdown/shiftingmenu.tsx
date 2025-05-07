@@ -252,10 +252,10 @@ const Nub = ({ selected }: { selected: number | null }) => {
 
 const Research = ({ isMobile = false }: ResearchProps) => {
   const researchLinks = [
-    { icon: <FiGlobe />, title: "Market Research", href: "/research/market" },
-    { icon: <FiTrendingUp />, title: "Social Listening", href: "/research/social" },
-    { icon: <FiBarChart2 />, title: "Our Work", href: "/research/work" },
-    { icon: <FiPieChart />, title: "Strategy PoV", href: "/research/strategy" },
+    { icon: <FiGlobe />, title: "Market Research", href: "/research" },
+    // { icon: <FiTrendingUp />, title: "Social Listening", href: "/research/social" },
+    // { icon: <FiBarChart2 />, title: "Our Work", href: "/research/work" },
+    // { icon: <FiPieChart />, title: "Strategy PoV", href: "/research/strategy" },
   ];
 
   return (

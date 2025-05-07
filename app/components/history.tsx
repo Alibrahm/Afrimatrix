@@ -3,11 +3,12 @@ import React from "react";
 import Image from "next/image";
 import Historyfgd from "../../public/images/africanhands.jpg";
 import Historybgd from "../../public/images/historybgd.png";
+
 export default function History() {
   return (
-    <section className="flex  pt-2 md:py-9 md:pb-10  mx-auto font-inherit bg-[#F6F6F6] ">
+    <section className="flex pt-2 md:py-9 md:pb-10 mx-auto font-inherit bg-[#F6F6F6]">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-11">
-        <div className=" md:flex flex-col h-full items-center mt-0 md:-mt-8 relative">
+        <div className="md:flex flex-col h-full items-center mt-0 md:-mt-8 relative">
           <div className="w-72 -ml-16">
             <Image
               src={Historybgd}
@@ -30,16 +31,13 @@ export default function History() {
         <div className="flex flex-col m-auto">
           <div className="my-1 md:my-4 max-w-2xl">
             <div className="text-[#B79765] tracking-widest font-bold text-xl my-2 text-center md:text-left">
-              About us
+              Our Expertise
             </div>
             <div className="flex justify-between ml-1 md:ml-0">
               <div>
-                {/* <span className="text-[#414D75] text-xl font-bold md:text-2xl tracking-widest">
-                  Our History
-                </span> */}
-                <hr className="w-16 h-1  md:my-1 bg-[#B79765] border-0 rounded " />
+                <hr className="w-16 h-1 md:my-1 bg-[#B79765] border-0 rounded" />
               </div>
-              <div className="absolute px-4 right-[5%] -mt-5 ">
+              <div className="absolute px-4 right-[5%] -mt-5">
                 <svg
                   className="w-10 h-10 text-gray-300 opacity-35 dark:text-gray-300"
                   aria-hidden="true"
@@ -52,16 +50,12 @@ export default function History() {
               </div>
             </div>
             <div className="antialiased my-2 text-lg p-2 md:p-0">
-              <p className="max-w-[29rem] text-[#8D9593] font-bold tracking-wider line-clamp-4  ">
-                Bullut & Maitha Advocates LLP is a law firm in Nairobi offering
-                innovative and agile legal solutions for modern businesses.
+              <p className="max-w-[29rem] text-[#8D9593] font-bold tracking-wider line-clamp-4">
+                Afrimatrix Research is a leading market research firm specializing in comprehensive data analysis and strategic insights across African markets. With over a decade of experience, we deliver actionable intelligence that drives business growth.
               </p>
-              <div className=" inline-flex items-center justify-center w-full"></div>
+              <div className="inline-flex items-center justify-center w-full"></div>
               <p className="text-[#8D9593] font-bold tracking-wider">
-                We specialize in corporate and commercial law providing top-tier
-                services to our clients. Our experienced lawyers build strong
-                and unique relationships with clients to provide comprehensive
-                advice tailored to their needs.
+                Our team of expert researchers combines local market knowledge with advanced analytics to provide deep insights into consumer behavior, market trends, and competitive landscapes. We partner with businesses to transform data into strategic advantages, helping them make informed decisions in dynamic African markets.
               </p>
             </div>
           </div>

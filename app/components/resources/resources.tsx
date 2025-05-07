@@ -1,60 +1,39 @@
 // components/Resources.js
 import React from "react";
-import { Personalcard,Award,BrifecaseTick,UserTick } from "iconsax-react";
+import { Chart2, Data, GlobalSearch, DocumentText } from "iconsax-react";
+
 const Resources = () => {
   const resources = [
     {
-      icon: <Personalcard color="#B79765" variant="Outline" size={40} />, // Replace with actual icons
-      title: "Experienced Lawyers",
-      description: "Our lawyers are top-tier professionals with exceptional skills.",
+      icon: <Chart2 color="#B79765" variant="Outline" size={40} />,
+      title: "Data-Driven Insights",
+      description: "Advanced analytics and research methodologies to deliver actionable market intelligence.",
     },
     {
-      icon: <Award color="#B79765" variant="Outline" size={40} />,
-      title: "Extensive Experience",
-      description: "We are well equipped to handle the most challenging legal issues.",
+      icon: <GlobalSearch color="#B79765" variant="Outline" size={40} />,
+      title: "Pan-African Coverage",
+      description: "Extensive research network across multiple African markets and regions.",
     },
     {
-      icon: <BrifecaseTick color="#B79765" variant="Outline" size={40} />,
-      title: "Client-focused Service",
-      description: "We prioritise our client's needs and deliverables",
+      icon: <Data color="#B79765" variant="Outline" size={40} />,
+      title: "Advanced Analytics",
+      description: "Cutting-edge tools and methodologies for comprehensive market analysis.",
     },
     {
-      icon: <UserTick color="#B79765" variant="Outline" size={40} />,
-      title: "Credibility",
-      description:
-        "Our law firm is recognised and respected by our vast number of clients across the world",
+      icon: <DocumentText color="#B79765" variant="Outline" size={40} />,
+      title: "Strategic Reports",
+      description: "Detailed market reports and strategic recommendations for informed decision-making.",
     },
-    // {
-    //   icon: <Bank color="#B79765" variant="Outline" size={40} />,
-    //   title: "Good Reputation",
-    //   description:
-    //     "We are a well-known law firm in 50 nations and territories.",
-    // },
-    // {
-    //   icon: <CallReceived color="#B79765" variant="Outline" size={40} />,
-    //   title: "Free Consultation",
-    //   description: "You will receive consultancy without paying any fee.",
-    // },
-    // {
-    //   icon: <People color="#B79765" variant="Outline" size={40} />,
-    //   title: "Good Resources",
-    //   description: "We have a huge resource of database and document.",
-    // },
-    // {
-    //   icon: <UserTick color="#B79765" variant="Outline" size={40} />,
-    //   title: "Talent Leaders",
-    //   description: "Our leaders are famous for dealing with complex cases.",
-    // },
   ];
 
   return (
-    <div className="py-12  px-4 bg-gray-50">
+    <div className="py-12 px-4 bg-gray-50">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-          Why Choose Us?
+          Our Research Capabilities
         </h2>
         <p className="mt-4 text-lg text-gray-600">
-          Here&apos;s why we stand out among others in the industry.
+          Leveraging expertise and technology to deliver comprehensive market insights.
         </p>
       </div>
 
