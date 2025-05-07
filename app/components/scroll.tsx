@@ -2,22 +2,21 @@
 import Image from "next/image";
 import Pic1 from '../../public/images/1.jpg'
 import Pic2 from '../../public/images/2.jpeg'
-import { useScroll, useTransform, motion } from "framer-motion";
+import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
 import { useEffect, useRef } from "react";
 import Lenis from 'lenis';
 
 export default function ScrollStyle() {
-
-  const container = useRef();
+  const container = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end end"]
   }) 
 
-  useEffect( () => {
+  useEffect(() => {
     const lenis = new Lenis()
 
-    function raf(time) {
+    function raf(time: number) {
       lenis.raf(time)
       requestAnimationFrame(raf)
     }
@@ -33,8 +32,11 @@ export default function ScrollStyle() {
   );
 }
 
-const Section1 = ({scrollYProgress}) => {
+interface SectionProps {
+  scrollYProgress: MotionValue<number>;
+}
 
+const Section1 = ({ scrollYProgress }: SectionProps) => {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
   const rotate = useTransform(scrollYProgress, [0, 1], [0, -5])
   return (
@@ -56,8 +58,7 @@ const Section1 = ({scrollYProgress}) => {
   )
 }
 
-const Section2 = ({scrollYProgress}) => {
-
+const Section2 = ({ scrollYProgress }: SectionProps) => {
   const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const rotate = useTransform(scrollYProgress, [0, 1], [5, 0])
 

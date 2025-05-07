@@ -16,10 +16,7 @@ const logos = [
   "/images/logos/standard.png",
 ];
 
-// Alternative: Use Unsplash Random Logos
-const unsplashLogos = Array.from({ length: 6 }).map(
-  (_, i) => `https://source.unsplash.com/200x100/?brand,logo&sig=${i}`
-);
+
 
 const ScrollingLogos = () => {
   return (
