@@ -1,4 +1,7 @@
 ![image](https://github.com/user-attachments/assets/f226b6f2-cec3-4d9e-aa27-87e85934e52b)
+![image](https://github.com/user-attachments/assets/8085354e-8495-4f50-abc4-7704ca8a2c00)
+![image](https://github.com/user-attachments/assets/ac59efac-b1eb-4afd-97f7-51c0b4e9ee41)
+![image](https://github.com/user-attachments/assets/69da4f1e-7a66-4dfc-a238-58c7adbed100)
 
 📊 Market Research Web App
 
