@@ -276,9 +276,17 @@ const Research = ({ isMobile = false }: ResearchProps) => {
 
 const Services = ({ isMobile = false }: ResearchProps) => {
   const services = [
-    { icon: <FiUsers />, title: "B2B Research", href: "/services/b2b" },
-    { icon: <FiGlobe />, title: "Global Panels", href: "/services/panels" },
-    { icon: <FiTrendingUp />, title: "Analytics", href: "/services/analytics" },
+    {
+      icon: <FiUsers />,
+      title: "B2B Research",
+      href: "/offerings/social-research",
+    },
+    { icon: <FiGlobe />, title: "Global", href: "/coverage" },
+    {
+      icon: <FiTrendingUp />,
+      title: "Analytics",
+      href: "/offerings/advanced-survey-analytics",
+    },
   ];
 
   return (
@@ -323,31 +331,37 @@ const About = ({ isMobile = false }: ResearchProps) => {
 const Blog = ({ isMobile = false }: ResearchProps) => {
   return (
     <div>
-      <div className={`grid ${isMobile ? 'grid-cols-1' : 'grid-cols-2'} gap-4`}>
-        <a href="/blog/market-trends" className="block">
+      <div className={`grid ${isMobile ? "grid-cols-1" : "grid-cols-2"} gap-4`}>
+        <a href="/blog" className="block">
           <img
             className="mb-2 h-32 w-full rounded object-cover"
-            src="/imgs/blog/market-trends.jpg"
+            src="https://plus.unsplash.com/premium_vector-1682310597209-306e3bc6c873?q=80&w=2342&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Market Trends"
           />
-          <h4 className="mb-1 text-sm font-medium">Market Trends 2024</h4>
+          <h4 className="mb-1 text-sm font-medium">Market Trends</h4>
           <p className="text-xs text-neutral-400">
             Insights into emerging market trends and consumer behavior patterns.
           </p>
         </a>
-        <a href="/blog/research-methods" className="block">
+        <a href="/offerings/advanced-survey-analytics" className="block">
           <img
             className="mb-2 h-32 w-full rounded object-cover"
-            src="/imgs/blog/research-methods.jpg"
+            src="https://plus.unsplash.com/premium_vector-1682311246573-62eff60cd2ec?q=80&w=2338&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Research Methods"
           />
-          <h4 className="mb-1 text-sm font-medium">Advanced Research Methods</h4>
+          <h4 className="mb-1 text-sm font-medium">
+            Advanced Research Methods
+          </h4>
           <p className="text-xs text-neutral-400">
-            Exploring innovative approaches to market research and data analysis.
+            Exploring innovative approaches to market research and data
+            analysis.
           </p>
         </a>
       </div>
-      <a href="/blog" className="mt-4 flex items-center gap-1 text-sm text-indigo-300">
+      <a
+        href="/blog"
+        className="mt-4 flex items-center gap-1 text-sm text-indigo-300"
+      >
         <span>View all articles</span>
         <FiArrowRight />
       </a>

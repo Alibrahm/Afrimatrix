@@ -6,7 +6,7 @@ import Contact from "../../public/images/Calling.png";
 import Subscribe from "../../public/images/subscribe.png";
 import Location from "../../public/images/Location.png";
 import Linkedin from "../../public/images/linkedin.png";
-import Link from "next/link";
+// import Link from "next/link";
 function footer() {
 
   return (
@@ -65,39 +65,7 @@ function footer() {
           </div>
 
           {/* Quick Links Section */}
-          <div className="w-full md:w-[220px]  mb-8 md:mb-0 text-center hidden md:block">
-            <h3 className="text-lg font-semibold">Quick links</h3>
-            <hr className="my-2 h-[1.5px] bg-[#B79765] border-0 w-24 mx-auto" />
-            <ul>
-              <li className="mb-3">
-                <Link
-                  href="/practice"
-                  className="hover:text-white text-[#B79765]"
-                >
-                  Practices Areas
-                </Link>
-                <hr className="h-[1.5px] bg-[#B79765] border-0 w-28 mx-auto" />
-              </li>
-              <li className="mb-3">
-                <Link href="/attorney" className="hover:text-white">
-                  Lawyer
-                </Link>
-                <hr className="h-[1.5px] bg-white border-0 w-14 mx-auto" />
-              </li>
-              <li className="mb-3">
-                {/* <Link href="#" className="hover:text-white">
-                  Case Studies
-                </Link> */}
-                <hr className="h-[1.5px] bg-white border-0 w-24 mx-auto" />
-              </li>
-              <li className="mb-3">
-                <Link href="/blog" className="hover:text-white">
-                  Media Centre
-                </Link>
-                <hr className="h-[1.5px] bg-white border-0 w-24 mx-auto" />
-              </li>
-            </ul>
-          </div>
+         
 
           {/* Subscribe Section */}
           <div className="text-center md:text-left">

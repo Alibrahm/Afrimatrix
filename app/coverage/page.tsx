@@ -469,12 +469,12 @@ function GlobeDemo() {
             Our Global Coverage
           </h2>
           <p className="text-center text-base md:text-lg text-neutral-200 max-w-2xl mx-auto">
-            We have established a strong presence across multiple continents, connecting
-            businesses and researchers worldwide.
+            We have established a strong presence across multiple continents,
+            connecting businesses and researchers worldwide.
           </p>
         </motion.div>
-        <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-t pointer-events-none" />
-        <div className="w-full h-full">
+        <div className="absolute  w-full bottom-0 inset-x-0 h-40 bg-gradient-to-t pointer-events-none" />
+        <div className="w-full -mt-10 h-full">
           <World data={sampleArcs} globeConfig={globeConfig} />
         </div>
       </div>
