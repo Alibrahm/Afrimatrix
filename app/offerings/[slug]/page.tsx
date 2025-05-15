@@ -9,6 +9,24 @@ import {
   AnalyticsWrapper,
 } from "../../components/ProgramsClientWrapper";
 
+// Define SegmentParams utility
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type SegmentParams<T extends Record<string, any> = Record<string, any>> = {
+  [K in keyof T]: T[K] extends string ? string | string[] | undefined : never;
+};
+
+// The PageProps interface
+export interface PageProps<
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
+  P extends Record<string, any> = Record<string, string | string[]>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
+  S extends Record<string, any> = Record<string, string | string[]> // S is for searchParams
+> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  params?: any; // Kept as 'any' from previous fix
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  searchParams?: any; // Changed this line to 'any' to fix the searchParams error
+}
 
 export async function generateStaticParams() {
   return offerings.map((offering) => ({
@@ -16,17 +34,60 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function OfferingPage({ params }: { params: { slug: string } }) {
-  const offering = offerings.find((o) => o.slug === params.slug);
+// Define the specific params type for this page
+interface OfferingPageParams {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  slug: any;
+}
+
+export default async function OfferingPage({
+  params: unresolvedParams, // unresolvedParams is 'any'
+  searchParams: unresolvedSearchParams, // unresolvedSearchParams is 'any'
+}: PageProps<
+  OfferingPageParams,
+  Record<string, string | string[] | undefined>
+>) {
+  // Added S type argument
+  // --- Handling params ---
+  // Since unresolvedParams is 'any', cast it for internal type safety if needed.
+  const typedUnresolvedParams = unresolvedParams as
+    | SegmentParams<OfferingPageParams>
+    | Promise<SegmentParams<OfferingPageParams>>
+    | undefined;
+
+  const params =
+    typedUnresolvedParams instanceof Promise
+      ? await typedUnresolvedParams
+      : typedUnresolvedParams;
+
+  if (!params) {
+    return <div>Error: Page parameters are missing.</div>;
+  }
+
+  // --- Handling searchParams ---
+  // Since unresolvedSearchParams is 'any', cast it for type-safe access.
+  // Next.js usually provides searchParams as a plain object.
+  const searchParams = unresolvedSearchParams as
+    | Record<string, string | string[] | undefined>
+    | undefined;
+
+  // Example: Log searchParams if they exist
+  if (searchParams && Object.keys(searchParams).length > 0) {
+    console.log("Search Params:", searchParams);
+  }
+
+  // --- Offering lookup logic ---
+  // Ensure params.slug is handled, especially since OfferingPageParams.slug is 'any'
+  const offering = offerings.find((o) => o.slug === String(params.slug));
 
   if (!offering) {
-    return <div>Offering not found</div>;
+    return <div>Offering not found for slug: {String(params.slug)}</div>;
   }
 
   const isMarketResearchProgram = offering.slug === "market-research-programs";
-    const isMarketResearch = offering.slug === "market-research";
-    const isEvaluation = offering.slug === "social-research";
-    const isAnalytics = offering.slug === "advanced-survey-analytics";
+  const isMarketResearch = offering.slug === "market-research";
+  const isEvaluation = offering.slug === "social-research";
+  const isAnalytics = offering.slug === "advanced-survey-analytics";
   return (
     <main className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -331,4 +392,4 @@ export default function OfferingPage({ params }: { params: { slug: string } }) {
       </div>
     </main>
   );
-} 
+}

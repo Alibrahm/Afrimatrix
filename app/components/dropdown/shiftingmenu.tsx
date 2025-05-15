@@ -12,7 +12,7 @@ import {
   FiMenu,
 } from "react-icons/fi";
 import { AnimatePresence, motion } from "framer-motion";
-
+import Link from "next/link";
 interface TabProps {
   children: React.ReactNode;
   tab: number;
@@ -259,16 +259,22 @@ const Research = ({ isMobile = false }: ResearchProps) => {
   ];
 
   return (
-    <div className={`${isMobile ? 'grid grid-cols-1 gap-4' : 'grid grid-cols-3 gap-4 divide-x divide-neutral-700'}`}>
+    <div
+      className={`${
+        isMobile
+          ? "grid grid-cols-1 gap-4"
+          : "grid grid-cols-3 gap-4 divide-x divide-neutral-700"
+      }`}
+    >
       {researchLinks.map((link, index) => (
-        <a
+        <Link
           key={index}
           href={link.href}
           className="flex w-full flex-col items-center justify-center py-2 text-neutral-400 transition-colors hover:text-neutral-50"
         >
           <span className="mb-2 text-xl text-indigo-300">{link.icon}</span>
           <span className="text-xs">{link.title}</span>
-        </a>
+        </Link>
       ))}
     </div>
   );
@@ -290,16 +296,22 @@ const Services = ({ isMobile = false }: ResearchProps) => {
   ];
 
   return (
-    <div className={`${isMobile ? 'grid grid-cols-1 gap-4' : 'grid grid-cols-3 gap-4 divide-x divide-neutral-700'}`}>
+    <div
+      className={`${
+        isMobile
+          ? "grid grid-cols-1 gap-4"
+          : "grid grid-cols-3 gap-4 divide-x divide-neutral-700"
+      }`}
+    >
       {services.map((service, index) => (
-        <a
+        <Link
           key={index}
           href={service.href}
           className="flex w-full flex-col items-center justify-center py-2 text-neutral-400 transition-colors hover:text-neutral-50"
         >
           <span className="mb-2 text-xl text-indigo-300">{service.icon}</span>
           <span className="text-xs">{service.title}</span>
-        </a>
+        </Link>
       ))}
     </div>
   );
@@ -313,16 +325,22 @@ const About = ({ isMobile = false }: ResearchProps) => {
   ];
 
   return (
-    <div className={`${isMobile ? 'grid grid-cols-1 gap-4' : 'grid grid-cols-3 gap-4 divide-x divide-neutral-700'}`}>
+    <div
+      className={`${
+        isMobile
+          ? "grid grid-cols-1 gap-4"
+          : "grid grid-cols-3 gap-4 divide-x divide-neutral-700"
+      }`}
+    >
       {aboutLinks.map((link, index) => (
-        <a
+        <Link
           key={index}
           href={link.href}
           className="flex w-full flex-col items-center justify-center py-2 text-neutral-400 transition-colors hover:text-neutral-50"
         >
           <span className="mb-2 text-xl text-indigo-300">{link.icon}</span>
           <span className="text-xs">{link.title}</span>
-        </a>
+        </Link>
       ))}
     </div>
   );
@@ -332,7 +350,7 @@ const Blog = ({ isMobile = false }: ResearchProps) => {
   return (
     <div>
       <div className={`grid ${isMobile ? "grid-cols-1" : "grid-cols-2"} gap-4`}>
-        <a href="/blog" className="block">
+        <Link href="/blog" className="block">
           <img
             className="mb-2 h-32 w-full rounded object-cover"
             src="https://plus.unsplash.com/premium_vector-1682310597209-306e3bc6c873?q=80&w=2342&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -342,8 +360,8 @@ const Blog = ({ isMobile = false }: ResearchProps) => {
           <p className="text-xs text-neutral-400">
             Insights into emerging market trends and consumer behavior patterns.
           </p>
-        </a>
-        <a href="/offerings/advanced-survey-analytics" className="block">
+        </Link>
+        <Link href="/offerings/advanced-survey-analytics" className="block">
           <img
             className="mb-2 h-32 w-full rounded object-cover"
             src="https://plus.unsplash.com/premium_vector-1682311246573-62eff60cd2ec?q=80&w=2338&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -356,29 +374,29 @@ const Blog = ({ isMobile = false }: ResearchProps) => {
             Exploring innovative approaches to market research and data
             analysis.
           </p>
-        </a>
+        </Link>
       </div>
-      <a
+      <Link
         href="/blog"
         className="mt-4 flex items-center gap-1 text-sm text-indigo-300"
       >
         <span>View all articles</span>
         <FiArrowRight />
-      </a>
+      </Link>
     </div>
   );
 };
 
 const Contact = ({ isMobile = false }: ResearchProps) => {
   return (
-    <a
+    <Link
       href="/contact"
       className={`flex w-full flex-col items-center justify-center py-2 text-neutral-400 transition-colors hover:text-neutral-50 ${
-        isMobile ? 'text-lg' : ''
+        isMobile ? "text-lg" : ""
       }`}
     >
       <span>Contact Us</span>
-    </a>
+    </Link>
   );
 };
 
