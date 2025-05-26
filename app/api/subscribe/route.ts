@@ -3,8 +3,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import axios from "axios";
-import dotenv from "dotenv";
-dotenv.config();
+
 const BREVO_API_KEY = process.env.BREVO_API_KEY;
 const LIST_ID = 3;
 
