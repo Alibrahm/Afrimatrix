@@ -3,9 +3,9 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import axios from "axios";
-
-const BREVO_API_KEY =
-  "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";
+import dotenv from "dotenv";
+dotenv.config();
+const BREVO_API_KEY = process.env.BREVO_API_KEY;
 const LIST_ID = 3;
 
 export async function POST(req: NextRequest) {

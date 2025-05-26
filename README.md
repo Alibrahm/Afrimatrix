@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+![image](https://github.com/user-attachments/assets/f226b6f2-cec3-4d9e-aa27-87e85934e52b)
+![image](https://github.com/user-attachments/assets/8085354e-8495-4f50-abc4-7704ca8a2c00)
+![image](https://github.com/user-attachments/assets/ac59efac-b1eb-4afd-97f7-51c0b4e9ee41)
+![image](https://github.com/user-attachments/assets/69da4f1e-7a66-4dfc-a238-58c7adbed100)
 
-## Getting Started
+📊 Market Research Web App
 
-First, run the development server:
 
-```bash
+A modern web application designed to streamline market research through intuitive survey management, data collection, and actionable insights. Built with Next.js, the app provides a robust, performant, and scalable foundation for marketing teams and research analysts.
+
+🚀 Features
+🔍 Dynamic survey creation and management
+
+🧠 Real-time response tracking
+
+📈 Visualized analytics and reporting
+
+👥 Role-based access for admins and agents
+
+🛠️ Offline data collection with service worker support
+
+💡 Smart validations and conditional workflows
+
+🛠️ Getting Started
+To start the development server locally:
+
+bash
+Copy
+Edit
+npm install
 npm run dev
 # or
-yarn dev
+yarn install && yarn dev
 # or
-pnpm dev
+pnpm install && pnpm dev
 # or
-bun dev
-```
+bun install && bun dev
+Then open http://localhost:3000 in your browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Start editing the application by modifying files under the app/ directory (e.g., app/page.tsx). Hot-reloading is enabled by default.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+📁 Tech Stack
+Framework: Next.js
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Language: TypeScript
 
-## Learn More
+UI: Tailwind CSS + Material UI
 
-To learn more about Next.js, take a look at the following resources:
+Auth: NextAuth.js
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+State Management: Redux Toolkit
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Data Storage: IndexedDB (via idb)
 
-## Deploy on Vercel
+API Communication: Axios
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Deployment: Vercel
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+📚 Learn More
+To deepen your understanding of the tools used in this app:
+
+Next.js Documentation
+
+NextAuth.js
+
+Redux Toolkit
+
+idb (IndexedDB wrapper)
+
+🚀 Deploy to Production
+Deploy this project using Vercel, the official Next.js deployment platform:
+
+➡️ Deploy on Vercel
+
+Or refer to the Next.js deployment documentation for alternative deployment strategies.
+
+🤝 Contributing
+Pull requests and feedback are welcome! If you'd like to contribute, please fork the repository and submit a PR with a clear description of your changes.
+
+Let me know if you’d like to include environment variable setup, test coverage, or screenshots of the UI.
