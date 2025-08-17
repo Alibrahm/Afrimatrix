@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import Logotransparent from "../../public/images/Bullutlogo.svg"
+import Logotransparent from "../../public/images/afrimatrix.png";
 import Message from "../../public/images/Message.png";
 import Contact from "../../public/images/Calling.png";
 import Subscribe from "../../public/images/subscribe.png";
@@ -82,32 +82,6 @@ function Footer() {
               <span>Oginga Odinga Street, Pionner House, Kisumu, Kenya.</span>
             </p>
           </div>
-
-          {/* Quick Links Section */}
-
-          {/* Subscribe Section */}
-          {/* <div className="text-center md:text-left">
-            <h3 className="text-lg font-semibold mb-1">Subscribe</h3>
-            <hr className="my-2 h-[1.5px] bg-[#B79765] border-0 w-20 mx-auto md:mx-0" />
-            <form className="flex flex-col md:flex-row items-center justify-center md:justify-start my-2">
-              <div className="relative w-full max-w-xs md:w-80">
-                <div className="absolute inset-y-0 start-0 flex items-center ps-3">
-                  <Image alt="Subscribe" src={Subscribe} className="w-4 h-4" />
-                  <div className="h-5 border-l border-gray-300 mx-3"></div>
-                </div>
-                <input
-                  type="text"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 w-full ps-14 p-2.5"
-                  placeholder="Enter your email"
-                  required
-                />
-              </div>
-            </form>
-            <p className="text-gray-300 text-sm mt-4">
-              Send an email and you will receive our newsletters,
-              service-related blogs, and press releases regularly.
-            </p>
-          </div> */}
           <div className="text-center md:text-left">
             <h3 className="text-lg font-semibold mb-1">Subscribe</h3>
             <hr className="my-2 h-[1.5px] bg-[#B79765] border-0 w-20 mx-auto md:mx-0" />
